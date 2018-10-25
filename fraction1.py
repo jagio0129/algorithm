@@ -24,9 +24,6 @@ def use_fraction():
 # Fractionを使わずに自前で実装
 class FullScratch:
 
-  # コンストラクタ
-  # def __init__(self):
-    
   # 最小公倍数の算出
   def least_common_multiple(self, a, b):
     return int(a*b / self.greatest_common_divisor(a,b))
