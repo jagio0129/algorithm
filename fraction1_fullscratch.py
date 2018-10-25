@@ -1,32 +1,7 @@
 import random
-from fractions import Fraction
-
-# Fractionライブラリを使う場合
-def use_fraction():
-  numerator1    = random.randint(1, 10) # 分子
-  denominator1  = random.randint(2, 10) # 分母
-  fraction1     = Fraction(numerator1, denominator1)
-
-  numerator2   = random.randint(1, 10) # 分子
-  denominator2 = random.randint(2, 10) # 分母
-  fraction2     = Fraction(numerator2, denominator2)
-
-  sum = fraction1 + fraction2
-  if sum > 1:
-    v = int(sum.numerator / sum.denominator)
-    n_sum = sum - v
-    if n_sum.numerator == 0:
-      print("%s + %s = %s" % (fraction1, fraction2, v))
-    else:
-      sum = str(v) + "." + str(n_sum)
-      print("%s + %s = %s" % (fraction1, fraction2, sum))
       
 # Fractionを使わずに自前で実装
 class FullScratch:
-
-  # 最小公倍数の算出
-  def least_common_multiple(self, a, b):
-    return int(a*b / self.greatest_common_divisor(a,b))
 
   # 最大公約数
   def greatest_common_divisor(self, a, b):
@@ -46,10 +21,10 @@ class FullScratch:
 
   # 約分した分子・分母を返す
   def reduction(self, numerator, denominator):
-    lcm = self.greatest_common_divisor(numerator, denominator)
+    gcd = self.greatest_common_divisor(numerator, denominator)
     
-    n = int(numerator / lcm)
-    d = int(denominator / lcm)
+    n = int(numerator / gcd)
+    d = int(denominator / gcd)
     return n, d
 
   # 帯分数化
@@ -111,6 +86,5 @@ if __name__ == '__main__':
   # 10回ループ
   for i in range(0,10):
     # 自前の処理
-    # full_scratch()
-    # Fractionライブラリを使用
-    use_fraction()
+    full_scratch()
+    
