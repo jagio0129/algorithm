@@ -7,13 +7,6 @@ def gen_ary(n):
     ary.append(i)
   return ary
 
-# 素数かどうか
-def is_prime_number(n):
-  for i in range(2,n):
-    if n % i == 0:
-      return False
-  return True
-
 # エラトステネス
 def eratosthenes(ary):
   max = int(math.sqrt(ary[-1]) + 1)
