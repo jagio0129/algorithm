@@ -1,29 +1,29 @@
 import math
 
-# 2〜nまでの自然数の配列を生成
-def gen_ary(n):
-  ary = []
-  for i in range(2,n+1):
-    ary.append(i)
-  return ary
-
 # エラトステネス
-def eratosthenes(ary):
-  max = int(math.sqrt(ary[-1]) + 1)
-  for i in range(0, max):
-    v = ary[i]
-    for j in range(2, len(ary)):
-      if j > ary[-1]:
-        break
-      # vの倍数を削除
-      if v*j in ary:
-        ary.remove(v*j)
-  return ary
+def eratosthenes(n):
+  if not isinstance(n, int):
+    raise TypeError('n is int type.')
+  if n < 2:
+    raise ValueError('n is more than 2')
+
+  prime = []
+  limit = math.sqrt(n)
+  # 2~nまでの配列を生成
+  data = [i + 1 for i in range(1, n)]
+  
+  while True:
+    p = data[0]
+    if limit <= p:
+      print(prime)
+      print(data)
+      return prime + data
+    prime.append(p)
+    data = [e for e in data if e % p != 0]
       
 ### main
 if __name__ == "__main__":
-  N = 10000
+  N = 100
 
-  ary = gen_ary(N)
-  ary = eratosthenes(ary)
-  print(ary)
+  data = eratosthenes(N)
+  print(data)
