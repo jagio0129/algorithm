@@ -113,5 +113,5 @@ a,b,cを、いずれも1以上100以下の整数とするとき、a*a+b*b=c*cを
 
 `eratosthenes.py`
 
-### 素因数分解[factoring.py](https://github.com/jagio0129/algorithm/blob/master/factoring.py)
+### 素因数分解[(factoring.py)](https://github.com/jagio0129/algorithm/blob/master/factoring.py)
 2から100の乱数を発生させ、その数を素因数分解するプログラムを作成しなさい。素因数分解とは、 数値を、素数の積で表すことであり、例えば、72 = 2 × 2 × 2 × 3 × 3といったように表現することである。
